@@ -10,6 +10,6 @@ class Adoptee(models.Model):
 
     def __str__(self):
         if self.name:
-            return self.species + " - " + self.name + " - " + self.breed
+            return str(self.id) + " - " + self.species + " - " + self.breed + " - " + self.name
         else:
-            return self.species + " - To Be Named" + " - " + self.breed
+            return str(self.id) + " - " + self.species + " - " + self.breed + " - Unnamed"

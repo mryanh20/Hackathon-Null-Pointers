@@ -1,5 +1,16 @@
-<form action="/your-name/" method="post">
-    <label for="your_name">Your name: </label>
-    <input id="your_name" type="text" name="your_name" value="{{ current_name }}">
-    <input type="submit" value="OK">
+<form action="/pet/submitname/" method="post">
+    {% csrf_token %}
+    Animals:
+
+    <ul>
+        {% for adoptee in adoptees %}
+            <li>ID: {{ adoptee.id }} - Species: {{ adoptee.species }} - Breed: {{ adoptee.breed }} </li>
+        {% endfor %}
+    </ul>
+    <label for="animal_id">Enter the ID of the animal you want to name: </label>
+    <input id="animal_id" type ="text" name="animal_id" value="{{ current_id }}">
+
+    <label for="animal_name"><p>Enter the name you would like them to have: </label>
+    <input id="animal_name" type="text" name="animal_name" value="{{ current_name }}"></p>
+    <p><input type="submit" value="Submit"></p>
 </form>

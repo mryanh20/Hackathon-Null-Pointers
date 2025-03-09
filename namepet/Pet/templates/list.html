@@ -2,6 +2,6 @@ Animals:
 
 <ul>
     {% for adoptee in adoptees %}
-        <li>{{ adoptee.species }} - {{ adoptee.breed }} </li>
+        <li>ID: {{ adoptee.id }} - Species: {{ adoptee.species }} - Breed: {{ adoptee.breed }} </li>
     {% endfor %}
 </ul>

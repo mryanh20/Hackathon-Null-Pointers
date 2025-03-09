@@ -9,4 +9,5 @@ urlpatterns = [
     path("jsondog/", views.json_dogs, name = "list"),
     path("jsoncat/", views.json_cats, name = "list"),
     path("jsonunnamed/", views.json_unnamed, name = "list"),
+    path("submitname/", views.get_name, name="name")
 ]
