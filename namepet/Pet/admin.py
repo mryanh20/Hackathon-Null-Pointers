@@ -1,3 +1,9 @@
 from django.contrib import admin
+from Pet.models import Adoptee
 
-# Register your models here.
+
+class AdopteeAdmin(admin.ModelAdmin):
+    pass
+
+
+admin.site.register(Adoptee, AdopteeAdmin)
