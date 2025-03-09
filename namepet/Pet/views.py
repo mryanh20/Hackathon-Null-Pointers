@@ -1,7 +1,9 @@
 from django.shortcuts import render
 from .models import Adoptee
 from django.http import HttpResponse
+from django.http import HttpResponseDirect
 from django.http import JsonResponse
+from .forms import NameForm
 
 # Create your views here.
 def list_unnamed(request):
@@ -27,6 +29,9 @@ def json_cats(request):
 def json_dogs(request):
     adoptees = list(Adoptee.objects.filter(species="Dog", name__isnull=True).values())
     return JsonResponse(adoptees, safe=False)
+
+
+
 
 
 
